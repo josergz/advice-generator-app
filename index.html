@@ -13,6 +13,14 @@
 		/>
 
 		<title>Frontend Mentor | Advice generator app</title>
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Manrope:wght@800&display=swap"
+			rel="stylesheet"
+		/>
+		<link rel="preload" href="css/style.css" as="style" />
+		<link rel="stylesheet" href="css/style.css" />
 
 		<!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
 		<style>
@@ -26,17 +34,21 @@
 		</style>
 	</head>
 	<body>
-		Advice #<!-- Advice ID goes here -->
+		<main id="container" class="card-container">
+			<p class="title"></p>
+			<h1 class="text"></h1>
+			<img
+				class="divisor"
+				src="/assets/images/pattern-divider-desktop.svg"
+				alt=""
+			/>
 
-		"<!-- Advice text goes here -->"
-
-		<main class="container"></main>
-
-		<div class="attribution">
-			Challenge by
-			<a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
-				>Frontend Mentor</a
-			>. Coded by <a href="#">Your Name Here</a>.
-		</div>
+			<div class="dice-container">
+				<button onclick="obtenerDatos()">
+					<img class="dice" src="/assets/images/icon-dice.svg" alt="" />
+				</button>
+			</div>
+		</main>
+		<script src="/assets/js/app.js"></script>
 	</body>
 </html>

@@ -1,0 +1,75 @@
+// variables
+// ## Colors
+
+// ### Primary
+$LightCyan: hsl(193, 38%, 86%);
+$NeonGreen: hsl(150, 100%, 66%);
+
+// ### Neutral
+$GrayishBlue: hsl(217, 19%, 38%);
+$DarkGrayishBlue: hsl(217, 19%, 24%);
+$DarkBlue: hsl(218, 23%, 16%);
+// --------------------------------------------------
+body {
+	margin: 0;
+	height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-family: 'Manrope', sans-serif;
+	font-weight: 800;
+	background-color: $DarkBlue;
+	.card-container {
+		position: relative;
+		border-radius: 20px;
+
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		width: 40%;
+		padding: 20px;
+		background-color: $DarkGrayishBlue;
+		.title {
+			color: $NeonGreen;
+			margin: 0;
+			padding: 10px;
+			text-align: center;
+		}
+		.text {
+			color: $LightCyan;
+			margin: 0;
+			text-align: center;
+			padding: 20px;
+		}
+
+		.divisor {
+			padding: 20px 20px 40px 20px;
+		}
+
+		.dice-container {
+			position: absolute;
+			bottom: -50px;
+			padding: 20px;
+			button {
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				background-color: $NeonGreen;
+				padding: 0;
+				margin: 0;
+				border: none;
+				padding: 20px;
+				border-radius: 50%;
+				img {
+					padding: 0;
+					margin: 0;
+				}
+			}
+			button:hover {
+				background-color: hsl(150, 100%, 50%);
+				box-shadow: -2px -2px 30px -2px hsl(150, 100%, 50%);
+			}
+		}
+	}
+}
