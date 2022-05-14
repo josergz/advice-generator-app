@@ -1,75 +1,166 @@
-// variables
 // ## Colors
-
 // ### Primary
 $LightCyan: hsl(193, 38%, 86%);
 $NeonGreen: hsl(150, 100%, 66%);
-
 // ### Neutral
 $GrayishBlue: hsl(217, 19%, 38%);
 $DarkGrayishBlue: hsl(217, 19%, 24%);
 $DarkBlue: hsl(218, 23%, 16%);
 // --------------------------------------------------
-body {
-	margin: 0;
-	height: 100vh;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	font-family: 'Manrope', sans-serif;
-	font-weight: 800;
-	background-color: $DarkBlue;
-	.card-container {
-		position: relative;
-		border-radius: 20px;
-
+html {
+	/* 1rem = 10px */
+	font-size: 62.5%;
+	body {
+		font-size: 1.6rem;
+		margin: 0;
+		height: 100vh;
 		display: flex;
-		flex-direction: column;
 		align-items: center;
 		justify-content: center;
-		width: 40%;
-		padding: 20px;
-		background-color: $DarkGrayishBlue;
-		.title {
-			color: $NeonGreen;
-			margin: 0;
-			padding: 10px;
-			text-align: center;
-		}
-		.text {
-			color: $LightCyan;
-			margin: 0;
-			text-align: center;
-			padding: 20px;
-		}
+		font-family: 'Manrope', sans-serif;
+		font-weight: 800;
+		background-color: $DarkBlue;
+		.card-container {
+			position: relative;
+			border-radius: 2rem;
 
-		.divisor {
-			padding: 20px 20px 40px 20px;
-		}
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			width: 40%;
+			padding: 2rem;
+			background-color: $DarkGrayishBlue;
+			.title {
+				color: $NeonGreen;
+				margin: 0;
+				padding: 2rem 1rem 0.5rem 1rem;
+				text-align: center;
+			}
+			.text {
+				color: $LightCyan;
+				margin: 0;
+				text-align: center;
+				padding: 2rem;
+			}
 
-		.dice-container {
-			position: absolute;
-			bottom: -50px;
-			padding: 20px;
-			button {
+			.divisor,
+			.divisor-mobile {
+				padding: 2rem 2rem 4rem 2rem;
+			}
+
+			.dice-container {
+				position: absolute;
+				bottom: -5rem;
+				padding: 2rem;
+				button {
+					display: flex;
+					align-items: center;
+					justify-content: center;
+					background-color: $NeonGreen;
+					padding: 0;
+					margin: 0;
+					border: none;
+					padding: 2rem;
+					border-radius: 50%;
+					img {
+						padding: 0;
+						margin: 0;
+					}
+				}
+			}
+		}
+	}
+}
+
+// RESPONSIVE
+
+// Mobile
+@media only screen and (min-width: 320px) and (max-width: 480px) {
+	html {
+		height: 100%;
+		margin: 0;
+		display: flex;
+		flex-direction: column;
+		body {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+
+			margin: auto;
+			padding: 0;
+
+			#container {
 				display: flex;
 				align-items: center;
 				justify-content: center;
-				background-color: $NeonGreen;
-				padding: 0;
-				margin: 0;
-				border: none;
-				padding: 20px;
-				border-radius: 50%;
-				img {
-					padding: 0;
-					margin: 0;
+				width: 80%;
+
+				.divisor-mobile {
+					display: block;
+				}
+
+				.divisor {
+					display: none;
 				}
 			}
-			button:hover {
-				background-color: hsl(150, 100%, 50%);
-				box-shadow: -2px -2px 30px -2px hsl(150, 100%, 50%);
+		}
+	}
+}
+
+//Tablet
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+	html {
+		height: 100%;
+		margin: 0;
+		display: flex;
+		flex-direction: column;
+		body {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			margin: auto;
+			padding: 0;
+
+			#container {
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				width: 80%;
+
+				.divisor-mobile {
+					display: none;
+				}
+
+				.divisor {
+					display: block;
+				}
 			}
+		}
+	}
+}
+
+//Desktop
+@media (min-width: 992px) {
+	#container {
+		.divisor-mobile {
+			display: none;
+		}
+
+		.divisor {
+			display: block;
+		}
+		button:hover {
+			background-color: hsl(150, 100%, 50%);
+			box-shadow: -2px -2px 30px -2px hsl(150, 100%, 50%);
+		}
+	}
+}
+
+@media (max-width: 766px) {
+	#container {
+		.divisor {
+			display: none;
 		}
 	}
 }
